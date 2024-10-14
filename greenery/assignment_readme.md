@@ -11,8 +11,8 @@ On average, how long does an order take from being placed to being delivered?
 
 How many users have only made one purchase? Two purchases? Three+ purchases? (Note: you should consider a purchase to be a single order. In other words, if a user places one order for 3 products, they are considered to have made 1 purchase.)  
 **1 purchase: 25 users**  
-**2 purchases: 56 users**  
-**3+ purchase: 280 users**  
+**2 purchases: 28 users**  
+**3+ purchase: 71 users**  
 
 On average, how many unique sessions do we have per hour?  
 **10 sessions per hour**
