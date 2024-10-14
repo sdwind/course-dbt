@@ -1,0 +1,43 @@
+version: 2
+
+sources:
+
+  - name: greenery # name of the source (this can be named whatever you want, but should be descriptive. this source (superheroes) is used for our week 1 tutorial so thats why i named it this way)
+    schema: public # this is the schema our raw data lives in
+    database: raw # this is the name of the database that our source data lives in
+
+    quoting:
+      database: false
+      schema: false
+      identifier: false
+
+    freshness: # this is where we define freshness thresholds
+      warn_after: {count: 24, period: hour}
+      error_after: {count: 48, period: hour}
+
+    tables: # this is where we define table metadata (name, description, load timestamps)      
+      - name: addresses
+        description: >
+          Contains addresses
+      - name: users 
+        loaded_at_field: created_at
+        description: >
+          Contains users
+      - name: promos 
+        description: >
+          Contains promotions
+      - name: products 
+        description: >
+          Contains products
+      - name: orders 
+        loaded_at_field: created_at
+        description: >
+          Contains order headers
+      - name: order_items 
+        description: >
+          Contains order items
+      - name: events 
+        loaded_at_field: created_at
+        description: >
+          Contains events 
+          
