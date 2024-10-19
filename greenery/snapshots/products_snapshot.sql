@@ -1,3 +1,7 @@
+
+{% snapshot products_snapshot %}
+
+
 {{
   config(
     target_database = target.database,
@@ -7,3 +11,8 @@
     check_cols=['inventory'],
    )
 }}
+
+  SELECT * FROM {{ source('greenery', 'products') }}
+
+{% endsnapshot %}
+

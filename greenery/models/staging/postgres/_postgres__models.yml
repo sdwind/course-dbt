@@ -1,18 +1,40 @@
 version: 2
 
 models:
-  - name: stg_postgres__addresses    
+  - name: stg_postgres__addresses  
+    description: A model for user addresses  
     columns:
       - name: address_id
         tests:
           - not_null
           - unique
+        description: Unique identifier for address
+
+      - name: address
+      - name: zipcode    
+        tests:
+          - not_null
+      - name: state
+      - name: country
+
   - name: stg_postgres__events     
     columns:
       - name: event_id
         tests:
           - not_null
           - unique
+
+      - name: user_id
+        tests:  
+          - relationships: 
+              to: ref('stg_postgres__users')
+              field: user_id 
+
+      - name: event_type
+        tests:
+          - accepted_values:
+              values: ['checkout','package_shipped','add_to_cart','page_view']
+
   - name: stg_postgres__order_items     
     
   - name: stg_postgres__orders    
@@ -21,18 +43,21 @@ models:
         tests:
           - not_null
           - unique
+
   - name: stg_postgres__products    
     columns:
       - name: product_id
         tests:
           - not_null
           - unique
+
   - name: stg_postgres__promos    
     columns:
       - name: promo_id
         tests:
           - not_null
           - unique
+
   - name: stg_postgres__users    
     columns:
       - name: user_id
