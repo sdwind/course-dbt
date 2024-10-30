@@ -59,17 +59,19 @@ where week_start_date= (
 order by conversion_rate desc
 ```
 Why might certain products be converting at higher/lower rates than others? 
-*** I think seasonality would be a driver of conversion rates since certain plants require different growing conditions to thrive.***
+** I think seasonality would be a driver of conversion rates since certain plants require different growing conditions to thrive.**
 
 ### Part 2:
 Create a macro to simplify part of a model(s). 
-
+** https://github.com/sdwind/course-dbt/blob/main/greenery/macros/sum_of.sql **
 
 ### Part 3:
-
+Add a post hook to your project to apply grants to the role “reporting”. 
+** https://github.com/sdwind/course-dbt/blob/main/greenery/macros/grant.sql ** 
 
 ### Part 4:
-
+Add calogica/dbt_date to create dim_date
+** https://github.com/sdwind/course-dbt/blob/main/greenery/packages.yml **
 
 ### Part 5:
 
